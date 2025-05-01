@@ -20,8 +20,8 @@ cd gerraTestersBack
 Dentro del folder clonado encontrarás el archivo SQL base que contiene la estructura de la base de datos (por ejemplo, la tabla `producto`).  
 Debes crear una base de datos en PostgreSQL y ejecutar ese script.
 
-📌 **Nombre sugerido para la base:** `inventario`  
-📂 Ruta esperada del script: `/database/init.sql` (ajústalo si está en otra carpeta)
+📌 **Nombre sugerido para la base:** `prueba02`  
+📂 Ruta esperada del script: `/BaseDeDatosInventario.sql`
 
 ---
 
