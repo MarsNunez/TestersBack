@@ -66,3 +66,6 @@ Estas pruebas validan que:
 - Se guarda correctamente un producto válido.
 
 ---
+
+## 🟢 ¿Donde ver el i validar que el servidor este levantado?
+Una vez hecho todo lo anterior, se puede ir al navegador y entrar a la ruta base: `http://localhost:8081/api/productos`.
