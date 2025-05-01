@@ -59,18 +59,10 @@ El proyecto incluye pruebas unitarias enfocadas en el controlador `ProductoContr
 src/test/java/com/example/ProyectoInventarioF2/ProductoControllerTest.java
 ```
 
-Para ejecutar los tests, puedes hacerlo desde tu IDE o vía Maven:
-
-```bash
-./mvnw test
-```
+Para ejecutar los tests, puedes hacerlo desde IntelliJ: click izquierdo sobre el archivo main, llamado `ProductoControllerTest.java` en la ruta de test/java/com/example/ProyectoInventarioF2 y escoger la opcion Run.
 
 Estas pruebas validan que:
 - No se permite crear productos con nombre vacío o precio inválido.
 - Se guarda correctamente un producto válido.
 
 ---
-
-## 📬 Autor
-
-Desarrollado por [Mars Núñez](https://github.com/MarsNunez)
