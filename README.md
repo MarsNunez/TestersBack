@@ -44,12 +44,7 @@ Asegúrate de que el puerto y nombre de base de datos también coincidan si hici
 ---
 
 ### 4. Correr el backend
-
-Puedes ejecutar el proyecto directamente desde tu IDE (IntelliJ, Eclipse) o con Maven:
-
-```bash
-./mvnw spring-boot:run
-```
+(En IntelliJ) Puedes hacer click izquierdo sobre el archivo main, llamado `ProyectoInventarioF2Application.java` y escoger la opcion Run.
 
 > Asegúrate de que PostgreSQL esté corriendo y la base esté creada antes de iniciar.
 
