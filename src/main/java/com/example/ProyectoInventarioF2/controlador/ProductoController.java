@@ -28,12 +28,17 @@ public class ProductoController {
     @PostMapping
     public ResponseEntity<?> crearProducto(@RequestBody Producto producto) {
         // Validación manual
-        if (producto.getNombre() == null || producto.getNombre().trim().isEmpty()) {
+        if (producto.getNombre() == null ||
+                producto.getNombre().trim().isEmpty()) {
             return ResponseEntity.badRequest().body("El nombre es obligatorio y no puede estar vacío.");
         }
 
-        if (producto.getPrecio() == null || producto.getPrecio() <= 0) {
-            return ResponseEntity.badRequest().body("El precio debe ser mayor que cero.");
+        if (producto.getPrecio() == null ||
+                producto.getPrecio() <= 0 ||
+                Double.isInfinite(producto.getPrecio()) ||
+                Double.isNaN(producto.getPrecio())) {
+
+            return ResponseEntity.badRequest().body("El precio debe ser mayor que cero, y no puede ser infinito ni NaN.");
         }
 
         Producto guardado = productoRepository.save(producto);
@@ -43,7 +48,8 @@ public class ProductoController {
     // DELETE: eliminar producto por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarProducto(@PathVariable Long id) {
-        if (!productoRepository.existsById(id)) {
+        if (!productoRepository.existsById(id))
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado.");
         }
 
@@ -59,11 +65,16 @@ public class ProductoController {
             return ResponseEntity.badRequest().body("El nombre no puede estar vacío.");
         }
 
-        if (nuevoProducto.getPrecio() == null || nuevoProducto.getPrecio() <= 0) {
-            return ResponseEntity.badRequest().body("El precio debe ser mayor que cero.");
+        if (nuevoProducto.getPrecio() == null ||
+                nuevoProducto.getPrecio() <= 0 ||
+                Double.isInfinite(nuevoProducto.getPrecio()) ||
+                Double.isNaN(nuevoProducto.getPrecio())) {
+
+            return ResponseEntity.badRequest().body("El precio debe ser mayor que cero, y no puede ser infinito ni NaN.");
         }
 
-        if (!productoRepository.existsById(id)) {
+        if (!productoRepository.existsById(id))
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado.");
         }
 
